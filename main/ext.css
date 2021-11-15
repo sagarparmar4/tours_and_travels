@@ -1,0 +1,30 @@
+body
+{
+	font: 100% arial,sans-serif;text-align:center
+}
+div#header
+{
+	background-color:grey;
+}
+div#header h1
+{
+	height:100px;
+	line-height:90px;
+	margin:0;
+	padding-left:10px;
+}
+table
+{
+	border-spacing: 5px;
+	border:black;
+}
+
+div#content
+{
+	float:left;width:500px
+}
+div#content p
+{
+	line-height:1.4
+}
+

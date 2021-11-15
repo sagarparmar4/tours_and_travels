@@ -1,0 +1,138 @@
+<html>
+<head>
+	<title>LOGIN FORM</title>
+	<script type="text/javascript">
+		function validateForm()
+		 {
+				console.log("yes");
+				var flag=1;
+    			var x = form1.firstname.value;//document.forms["form1"]["firstname"].value;
+    			var y = form1.lastname.value;
+    			var z = form1.mno.value;
+    			var email = form1.eid.value;
+				var pass=form1.password.value;
+				var pass1=form1.password1.value;
+   				var apos = email.indexOf("@");
+    			var dpos = email.lastIndexOf(".");
+   				
+   				 if (x == "")
+   				  {
+      				  alert("Please write your firstname");
+						flag=0;
+    			  }
+    			  if (y == "")
+   				  {
+      				  alert("Please write your lastname");
+						flag=0;
+    			  }
+				  if((x>0||y<9)||(y>0||y<9))
+				  {
+					alert("no numbers allowed in text feild");
+					flag=0;
+				  }
+				  var gender=form1.gender.value;
+				  if(gender=="")
+				  {
+					alert("Select gender");
+				  }
+				  var date1=form1.date1.value;
+					if(date1=="")
+					{
+						alert("Select your birthdate");
+					}
+    			  if(z.length != 10)
+    			  {
+    			  		alert("Mobile number should be of 10 digits only");
+    			  }
+    			  if(isNaN(z))
+    			  {
+    			  		z=prompt("Please enter valid phone number"," ");
+    			  }
+    			var emailcheck=email.indexOf("@");
+				var length2=email.length;
+				var length1=length2-4;
+				if(email=="")
+				{
+					alert("Email textfield is empty");
+					email=prompt("Enter valid email address");
+					flag=0;
+				}
+				if(email!="")
+				{
+					if(email.substring(length1,length2)!=".com")
+					{
+						alert("Email should have .com in the end");
+						flag=0;
+				}
+				if(emailcheck<0)
+				{
+					alert("Wrong email id @ sign missing");
+					flag=0;
+				}
+				if(((email.indexOf("."))-(email.indexOf("@")))<4)
+				{
+					alert("Wrong email id");
+					flag=0;
+				}
+				if(flag==0)
+				{
+					email=prompt("Enter valid email address");
+				}
+    			} 
+				if (pass!=pass1)
+				{
+					alert("Password doesnt match");
+					flag=0;
+				}
+				
+				if(flag==1)
+				{
+    			  	confirm("Are you sure you want to submit?");
+				}	
+				
+         }
+        </script>
+	</head>
+		<BODY background="C:\pang\l.jpg">
+		<FORM align="center" name="form1" onsubmit="return validateForm()" method="post">
+		<fieldset>
+    	<legend>Personal information:</legend>
+		First name:<br>
+ 		 <input type="text" name="firstname" required>
+		  <br>
+		  Last name:<br>
+  			<input type="text" name="lastname" >
+  			<br><br><br>
+  			Gender:<br>
+  			<input type="radio" name="gender" value="male" > Male<br>
+  			<input type="radio" name="gender" value="female"> Female<br>
+			<input type="radio" name="gender" value="other"> Other<br><br><br>
+		    Date Of Birth: <input type="date" name="date1" maxlength="5" comments="Date">
+			</fieldset>
+			<fieldset>
+    		<legend>Contact Details:</legend>
+    		Address:<br>
+    		<textarea rows="7" cols="70" comments="Enter your Address here!"></textarea>
+    		<br><br>
+    		Mobile no:<br>
+    		<input type="text" name="mno" ><br><br>
+    		Email Id:<br>
+    		<input text="text" name="eid"><br>
+    		</fieldset>
+    		<fieldset>
+    			<legend>Login Details</legend>
+    			Username:<br>
+    			<input type="text" name="uname" ><br><br>
+    			Password:<br>
+    			<input type="password" name="password" /><br>
+				Confirm Password:<br>
+    			<input type="password" name="password1" /><br>
+    		</fieldset>
+    		<br><br>
+    		<input type="submit" name="submit" value="Submit" />
+			<input type="reset" name="reset"  value="Reset" />
+			<input type="button" name="ok" value="OK"  />
+			<a href="C:\Users\Student\Desktop\agnp"></a>
+		</FORM>
+	</BODY>
+	</html>
